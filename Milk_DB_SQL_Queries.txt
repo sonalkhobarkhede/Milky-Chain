@@ -1,0 +1,24 @@
+>create database milk_management;
+>use milk_management;
+
+
+>create table customer_info_table(customer_id int primary key auto_increment NOT NULL, customer_name varchar(50) NOT NULL, customer_address varchar(50) NOT NULL, customer_mobile varchar(20) NOT NULL UNIQUE, customer_email varchar(50) NOT NULL UNIQUE, customer_password varchar(128) NOT NULL, customer_pincode int NOT NULL);
+
+
+>create table customer_order_table(customer_order_id int primary key NOT NULL,customer_id int NOT NULL, distribuitor_id int NOT NULL, distribuitor_order_id int NOT NULL , distribuitor_order_date date NOT NULL,customer_milk_type varchar(20),customer_order_quantity int NOT NULL,total_order_cost int,order_status int);
+
+
+>create table customer_feedback_table(customer_feedback_date date NOT NULL,customer_id int NOT NULL, distributor_id int NOT NULL,feedback_comment varchar(50));
+
+
+>create table distributor_info_table(distributor_id int primary key auto_increment NOT NULL,distributor_name varchar(50) NOT NULL,distributor_shop_name varchar(50),distributor_address varchar(50) NOT NULL,distributor_mobile_no varchar(20) NOT NULL,distributor_email varchar(20) NOT NULL,distributor_city varchar(20) NOT NULL,distributor_pin int NOT NULL,distributor_password varchar(20) NOT NULL);
+
+
+>create table distributor_order_table(distributor_order_id int primary key auto_increment NOT NULL,distributor_id int,product_id int,distributor_order_date date,distributor_milk_quantity_ltr int NOT NULL,total order cost int generated always as(distributor_milk_quantity_ltr *10)virtual NOT NULL ,order_status int);
+
+
+>create table admin_product_table(product_id int primary key auto_increment NOT NULL , product_type varchar(20) NOT NULL, product_quantity int NOT NULL, product_cost_per_Ltr int NOT NULL);
+
+
+
+>create table admin_table(admin_id int primary key auto_increment NOT NULL, admin_name varchar(50) NOT NULL UNIQUE,admin_password varchar(50)  NOT NULL);
