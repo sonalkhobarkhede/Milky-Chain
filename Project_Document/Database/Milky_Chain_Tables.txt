@@ -1,0 +1,115 @@
+use Milk_Management;
+
+
+create table customer_info_table(customer_id int primary key auto_increment,
+customer_fname varchar(100) not null,
+customer_lname varchar(100) not null,
+customer_address varchar(500) not null,
+customer_mobile_no varchar(100) not null,
+customer_email varchar(100) not null unique,
+customer_username varchar(100) not null unique,
+customer_password varchar(100) not null unique,
+customer_pincode int not null,
+customer_area varchar(100) not null
+);
+
+create table supplier_info_table(
+supplier_id int not null primary key auto_increment,
+supplier_fname   varchar(100) not null,
+supplier_lname   varchar(100) not null,
+supplier_address  varchar(100) not null,
+supplier_mobile_no	 varchar(100) not null,
+supplier_email	 varchar(100) not null,
+supplier_username  varchar(100) not null unique key,
+supplier_password  varchar(100) not null unique key,
+supplier_work_area varchar(100) not null ,
+suppler_work_area_pincode int not null
+);
+
+
+create table milk_production_table(
+product_id int not null primary key auto_increment,
+product_name varchar(100) not null,
+milk_type varchar(100) not null,
+production_per_day_liter int not null,
+price_per_liter int not null
+);
+
+create table subscription_table(
+subscription_id int not null primary key auto_increment,
+customer_id int not null, 
+product_id int not null,
+supplier_id int not null,
+subscription_start_date date not null,
+subscription_end_date date not null, 
+milk_quantity_ltr int not null,
+subscription_status varchar(100) not null,
+foreign key (customer_id) references customer_info_table (customer_id),
+foreign key (product_id) references milk_production_table (product_id),
+foreign key (supplier_id) references supplier_info_table (supplier_id)
+);
+
+
+create table order_table(
+order_id int primary key auto_increment,
+customer_id int not null,
+supplier_id int not null,
+order_date datetime not null, 
+product_id int not null,
+order_quantity int not null,
+order_delivery_date datetime not null,
+order_status varchar(100) not null,
+total_order_cost int not null,
+foreign key (customer_id) references customer_info_table (customer_id),
+foreign key (product_id) references milk_production_table (product_id),
+foreign key (supplier_id) references supplier_info_table (supplier_id)
+);
+
+
+create table non_deliver_record(
+non_deliver_record_id int primary key auto_increment,
+subscription_id int not null,
+non_deliver_record_date date not null,
+non_deliver_record_status varchar(100) not null,
+foreign key (subscription_id) references subscription_table (subscription_id)
+);
+
+
+
+create table customer_bill_table(
+customer_bill_id int primary key auto_increment,
+customer_id int not null,
+customer_bill_date_time datetime not null,
+customer_bill_for_month varchar(100) not null,
+total_order_days int not null,
+total_quantity int not null, 
+total_amount_rs int not null,
+customer_bill_status varchar(100) not null,
+foreign key (customer_id) references customer_info_table (customer_id)
+);
+
+
+create table complaint_table(
+complaint_id int primary key auto_increment,
+customer_id  int not null,
+complaint_info varchar(300) not null,
+complaint_date datetime not null,
+complaint_status varchar(100) not null,
+foreign key (customer_id) references customer_info_table (customer_id)
+);
+
+
+
+
+
+create table complaint_comment_table(
+complaint_comment_id int primary key auto_increment,
+complaint_id int not null,
+comment_text varchar(500) not null,
+comment_date_time datetime not null,
+foreign key (complaint_id) references complaint_table (complaint_id)
+);
+
+
+
+

@@ -1,0 +1,87 @@
+ Table:-customer_info_table
+ 
+ 
+ insert into customer_info_table values(default,"Suresh","Patil","Pimpri Chinchwad","8888552263","sureshpatil@gmail.com","suresh123","suresh123",411057,"409-Ashwini Heritage, PCMC Road, Opp. Telephone Exchange,Clover Park, Pimpri Chinchwad");
+
+ insert into customer_info_table values(default,"Vinita","Rege","Pimple Saudagar","7777665598","vinitarege@gmail.com","vinita678","vinita678",411028,"702-Vishnu Vilas,Near Ram-Mandir,Baner-Pimple Saudagar,Pune");
+
+ insert into customer_info_table values(default,"Shiv","Durge","Hinjewadi","9234661208","shivdurge234@gmail.com","shivdurge","shivdurge",411057,"B-302,Ramakant Apartment,Near BOI,Wakad-Hinjewadi,Pune");
+
+ insert into customer_info_table values(default,"Prasanna","Verma","Viman Nagar","8823498554","prasannaverma678@gmail.com","Prasanna567","prasanna876",411045,""Pranav" Bunglow,Near Awati Motors,Viman Nagar");
+
+ insert into customer_info_table values(default,"Satish","Singh","Wagholi","9663492201","satishsingh6@gmail.com","satishsingh","satish123",411045,"Silver offsprings,on BAIF Road,Near Moze College,Kharadi-Wagholi");
+
+*******************************************************************
+Table:-supplier_info_table
+
+
+insert into supplier_info_table values(default,"Radhe","Tiwari","Pure Dairy,Eastern Complex,Near Ambedkar Square,Pimpri Chinchwad","9555330012","radhetiwari123@gmail.com","radhetiwari","radhe3343","Pimpri Chinchwad",411057);
+
+insert into supplier_info_table values(default,"Shyam","Mishra","Gajanan Milk Shop,Clover Park,Ravet","9367772243","mishrashyam22@gmail.com","shyammishra","shyam7890","Ravet",411028);
+
+insert into supplier_info_table values(default,"Hari","Patel","Golden Suppliers,Near Bank Of Maharashtra,ShivajiNagar","9773412098","haripatel@gmail.com","haripatel","hari1123","ShivajiNagar",411045);
+************************************************
+Table:-milk_production_table
+
+
+insert into milk_production_table values(default,"pasteurized milk","cow",500,60);
+
+insert into milk_production_table values(default,"tonned milk","cow",400,50);
+**********************************************************************
+Table:-subscription_table
+
+insert into subscription_table values(default,1,1,1,'2022-1-1','2022-1-31','active',4);
+
+insert into subscription_table values(default,2,2,2,'2022-1-1','2022-1-31','active',5);
+
+insert into subscription_table values(default,3,1,1,'2022-1-1','2022-1-31','active',2);
+
+insert into subscription_table values(default,4,2,3,'2022-1-1','2022-1-31','active',5);
+**************************************************************
+Table:-order_table
+
+insert into order_table values(default,5,3,'2022-1-15',1,5,'2022-1-16','order placed',300);
+
+
+***********************************
+Table:-non_deliver_record
+
+insert into non_deliver_record values(default , 1 , '2022-01-01', 'Not Delivered');
+insert into non_deliver_record values(default , 2 , '2022-02-01', 'Not Delivered');
+insert into non_deliver_record values(default , 2 , '2022-03-01', 'Not Delivered');
+insert into non_deliver_record values(default , 4 , '2022-04-01', 'Not Delivered');
+insert into non_deliver_record values(default , 1 , '2022-05-01', 'Not Delivered');
+*****************************************
+Table:-customer_bill_table
+
+insert into customer_bill_table values(default,1,'2022-01-31',"January",29,60,7260,"Pending");
+
+insert into customer_bill_table values(default,2,'2022-01-31',"January",29,64,7250,"Paid");
+
+insert into customer_bill_table values(default,3,'2022-01-31',"January",31,65,7250,"Pending");
+
+insert into customer_bill_table values(default,4,'2022-01-31',"January",30,62,1500,"Paid");
+
+insert into customer_bill_table values(default,5,'2022-01-31',"January",1,5,300,"Paid");
+
+***************************************
+Table:-complaint_table
+
+
+insert into complaint_table values(default,1,"Received Bad Package",'2022-01-18',"Resolved");
+
+insert into complaint_table values(default,2,"Received Spoiled Milk",'2022-01-22',"Resolved");
+
+insert into complaint_table values(default,3,"Milk quality was not good",'2022-01-30',"Pending");
+
+**************************************
+Table:-complaint_comment_table
+
+
+insert into complaint_comment_table values(default,1,"We will try to improve packaging",'2022-01-19');
+
+insert into complaint_comment_table values(default,2,"Sorry for bad experience",'2022-01-22');
+
+insert into complaint_comment_table values(default,2,"We will try to improve",'2022-01-31');
+
+*************************
